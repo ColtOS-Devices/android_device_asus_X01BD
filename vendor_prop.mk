@@ -146,7 +146,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.havoc.maintainer=SonalSingh
+    ro.colt.maintainer=SonalSingh
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The Havoc-OS Project
+# Copyright (C) 2018 The Colt-Enigma Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,17 +19,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common Havoc-OS stuff
-$(call inherit-product, vendor/havoc/config/common.mk)
+# Inherit some common Colt-Enigma stuff
+$(call inherit-product, vendor/colt/common.mk)
+$(call inherit-product, packages/apps/ColtApps/common.mk)
 
-# Official Havoc-OS
-export export HAVOC_BUILD_TYPE=Official
+# Official Colt-Enigma
+RELEASE_TYPE := COLT_OFFICIAL
+
+# Bootanimatuon Resolution
+TARGET_BOOT_ANIMATION_RES := 1080x2280
 
 # Inherit from X01BD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := havoc_X01BD
+PRODUCT_NAME := colt_X01BD
 PRODUCT_DEVICE := X01BD
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := Zenfone Max Pro M2
@@ -37,13 +41,6 @@ PRODUCT_MANUFACTURER := asus
 TARGET_VENDOR := asus
 TARGET_VENDOR_PRODUCT_NAME := X01BD
 TARGET_VENDOR_DEVICE_NAME := X01BD
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2280
-TARGET_SCREEN_WIDTH := 1080
-
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
 
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=X01BD PRODUCT_NAME=X01BD
 
